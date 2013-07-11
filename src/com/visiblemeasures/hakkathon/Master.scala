@@ -18,7 +18,7 @@ class Master(nrOfWorkers: Int, nrOfMessages: Int, nrOfElements: Int, listener: A
   def receive = {
  
     case Calculate =>
-      for (i ← 0 until nrOfElements) workerRouter ! Work(i * nrOfElements, nrOfElements)
+      for (i <- 0 until nrOfElements) workerRouter ! Work(i * nrOfElements, nrOfElements)
       
     case Result(value) =>
       

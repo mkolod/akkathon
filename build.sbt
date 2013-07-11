@@ -92,7 +92,7 @@ javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 scalacOptions += "-deprecation"
 
 // set the main class for packaging the main jar
-mainClass in (Compile, packageBin) := Some("akka_hack.com.visiblemeasures.akkahack.Main")
+mainClass in (Compile, packageBin) := Some("src.com.visiblemeasures.hakkathon.Pi")
 
 // set the prompt (for this build) to include the project name and git branch
 shellPrompt <<= name(name => { state: State =>
