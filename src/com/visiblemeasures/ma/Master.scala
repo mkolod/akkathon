@@ -19,15 +19,7 @@ class Master(window: Int, stocks: List[StockInit]) extends Actor {
  
     case Start => {
       
-<<<<<<< HEAD
-<<<<<<< HEAD
         stocks.foreach(i => createActor(window, i.initPrice, i.sym.name) ! i.sym)
-=======
-        stocks.foreach(i => createActor(window, i.initPrice, i.sym.name) ! i)
->>>>>>> 7757857c938690ee320dda58c87da0f8ab1b6abb
-=======
-        stocks.foreach(i => createActor(window, i.initPrice, i.sym.name) ! i)
->>>>>>> 7757857c938690ee320dda58c87da0f8ab1b6abb
     }
       
   }
