@@ -9,8 +9,6 @@ import akka.actor.Props
 
 class StockGetter(window: Int, initPrice: Double, label: String) extends Actor {
   
-//  def this() = this(10, 100.0)
-  
   val maSystem = ActorSystem("maSystem")
   val aggregator: ActorRef = maSystem.actorOf(Props(new MAAggregator(window)), name = "maAggregator")
  
@@ -27,8 +25,9 @@ class StockGetter(window: Int, initPrice: Double, label: String) extends Actor {
     case Symbol(name, sym) => {
       
        while (true) {
+         
           aggregator ! Tick(Symbol(name, sym), update) // perform the work
-          Thread.sleep(1)
+          // Thread.sleep(1)
        }
       
     }
