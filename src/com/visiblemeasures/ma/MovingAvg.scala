@@ -7,12 +7,10 @@ object MovingAvg extends App {
      
     val maSystem = ActorSystem("maSystem")
     val window = 10
-    
-    // create the master
-    val master = maSystem.actorOf(Props(new Master(window)), name = "master")
+    val stocks = List(StockInit(Symbol("Apple", "AAPL"), 100.0), StockInit(Symbol("Amazon", "AMZN"), 200.0))
+    val master = maSystem.actorOf(Props(new Master(window, stocks)), name = "master")
 
-    // start the calculation
-    
+    // start the calculation   
     master ! Start
  
 
